@@ -5,8 +5,8 @@ provider "aws" {
   
 }
 
-module "vpc" {
-  source = "./modules/vpc"
+module "network" {
+  source = "./modules/network"
   # aws_vpc_name = var.aws_vpc_name
   # aws_security_group_name = var.aws_security_group_name
   aws_vpc_cidr = var.aws_vpc_cidr
