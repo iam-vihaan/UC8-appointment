@@ -1,15 +1,15 @@
-resource "aws_vpc" "uc8-ecs-vpc" {
+resource "aws_vpc" "kasi_hcl_vpc" {
   cidr_block           = var.aws_vpc_cidr
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
-    Name       = "uc8-ecs-vpc"
+    Name       = "kasi_hcl_vpc"
     Environment = "Dev"
   }
 }
 
-resource "aws_subnet" "uc8-public_subnet" {
-  vpc_id            = aws_vpc.uc8-ecs-vpc.id
+resource "aws_subnet" "hcl_public_subnet" {
+  vpc_id            = aws_vpc.kasi_hcl_vpc.id
   cidr_block        = var.aws_public_subnet_cidr
   availability_zone = var.availability_zone
   tags = {
@@ -19,7 +19,7 @@ resource "aws_subnet" "uc8-public_subnet" {
 }
 
 resource "aws_subnet" "hcl_private_subnet" {
-  vpc_id            = aws_vpc.uc8-ecs-vpc.id
+  vpc_id            = aws_vpc.kasi_hcl_vpc.id
   cidr_block        = var.aws_private_subnet_cidr
   availability_zone = var.availability_zone
   tags = {
@@ -29,7 +29,7 @@ resource "aws_subnet" "hcl_private_subnet" {
 }
 
 resource "aws_route_table" "public_route_table" {
-  vpc_id = aws_vpc.uc8-ecs-vpc.id
+  vpc_id = aws_vpc.kasi_hcl_vpc.id
   tags = {
     Name = "PublicRouteTable"
   }
@@ -41,7 +41,7 @@ resource "aws_route_table_association" "public_subnet_association" {
 }
 
 resource "aws_internet_gateway" "internet_gateway" {
-  vpc_id = aws_vpc.uc8-ecs-vpc.id
+  vpc_id = aws_vpc.kasi_hcl_vpc.id
   tags = {
     Name = "InternetGateway"
   }
@@ -54,7 +54,7 @@ resource "aws_route" "public_route" {
 }
 
 resource "aws_security_group" "Public_SG" {
-  vpc_id = aws_vpc.uc8-ecs-vpc.id
+  vpc_id = aws_vpc.kasi_hcl_vpc.id
   ingress {
     from_port   = 80
     to_port     = 80
@@ -75,7 +75,7 @@ resource "aws_security_group" "Public_SG" {
 }
 
 resource "aws_security_group" "Private_SG" {
-  vpc_id = aws_vpc.uc8-ecs_hcl_vpc.id
+  vpc_id = aws_vpc.kasi_hcl_vpc.id
   ingress {
     from_port   = 0
     to_port     = 0
