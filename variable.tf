@@ -3,16 +3,6 @@ variable "aws_region" {
     default = "us-east-1"
 }
 
-variable "access_key" {
-    description = "AWS access key"
-    default = null
-  
-}
-
-variable "secret_key" {
-    description = "AWS secret key"
-    default = null
-}
 variable "aws_security_group_name" {
     description = "Public_SG"
     default = "kasi_hcl_sg"
