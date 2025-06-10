@@ -5,7 +5,7 @@ variable "aws_region" {
 
 variable "aws_security_group_name" {
     description = "Public_SG"
-    default = "kasi_hcl_sg"
+    default = "uc8-sg"
   
 }
 
