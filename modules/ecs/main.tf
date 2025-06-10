@@ -1,10 +1,10 @@
 
 resource "aws_ecs_cluster" "example" {
-  name = "hcl_cluster"
+  name = "uc8-ecs-cluster"
 }
 
 resource "aws_ecs_task_definition" "hcl_taskdefination" {
-  family                   = "hcl_task"
+  family                   = "uc8-ecs-task"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   cpu                      = "1024"
@@ -12,7 +12,7 @@ resource "aws_ecs_task_definition" "hcl_taskdefination" {
 
   container_definitions = jsonencode([
     {
-      name      = "hcl_task"
+      name      = "uc8-ecs-taskk"
       image     = "nginx"
       essential = true
       portMappings = [
@@ -25,7 +25,7 @@ resource "aws_ecs_task_definition" "hcl_taskdefination" {
   ])
 }
 
-resource "aws_ecs_service" "hcl_task_service" {
+resource "aws_ecs_service" "uc8-ecs-taask" {
   name            = "hcl_task_service"
   cluster         = aws_ecs_cluster.example.id
   task_definition = aws_ecs_task_definition.hcl_taskdefination.arn
