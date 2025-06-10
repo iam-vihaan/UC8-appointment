@@ -11,7 +11,7 @@ variable "aws_ecs_task_memory" {
 
 variable "aws_ecs_task_container_name" {
     description = "ECS task container name"
-    default = "uc8-ecs-container"
+    default = "kasi_hcl-container"
   
 }
 
@@ -28,7 +28,7 @@ variable "aws_ecs_task_container_port" {
 
 variable "aws_ecs_service_name" {
     description = "ECS service name"
-    default = "uc8-ecs-container-service"
+    default = "kasi_hcl-service"
   
 }
 
