@@ -31,7 +31,7 @@ variable "aws_private_subnet_cidr" {
 
 variable "aws_s3_bucket_name" {
     description = "S3 bucket name"
-    default = "kasi-hcl-bucket"
+    default = "uc8-bucket-ecs"
 }
 
 variable "object_lock_enabled" {
@@ -42,7 +42,7 @@ variable "object_lock_enabled" {
 variable "tags" {
     description = "Tags for the S3 bucket"
     default = {
-        Name        = "kasi_hcl-bucket"
+        Name        = "uc8-bucket-ecs"
         Environment = "dev"
     }
 }
