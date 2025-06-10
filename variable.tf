@@ -150,14 +150,14 @@ variable "aws_ecs_service_assign_public_ip" {
 
 variable "aws_ecs_service_subnets" {
     description = "ECS service subnets" 
-    type = list
+    type = string
     default = "kasi_hcl_subnet"
   
 }
 
 variable "aws_ecs_service_security_groups" {
     description = "ECS service security groups"
-    type = list
+    type = string
     default = "kasi_hcl_sg"
   
 }
