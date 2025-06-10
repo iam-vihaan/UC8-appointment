@@ -5,8 +5,8 @@ provider "aws" {
   
 }
 
-module "vpc" {
-  source = "./modules/vpc"
+module "network" {
+  source = "./modules/network"
   # aws_vpc_name = var.aws_vpc_name
   # aws_security_group_name = var.aws_security_group_name
   aws_vpc_cidr = var.aws_vpc_cidr
@@ -22,16 +22,16 @@ module "S3" {
   tags = var.tags
 }
 
-module "ECR" {
-  source = "./modules/ECR"
+module "ecr" {
+  source = "./modules/ecr"
   aws_ecr_repo_name = var.aws_ecr_repo_name
   image_tag_mutability = var.image_tag_mutability
   scan_on_push = var.scan_on_push
   
 }
 
-module "ECS" {
-  source = "./modules/ECS"
+module "ecs" {
+  source = "./modules/ecs"
   aws_ecs_task_cpu = var.aws_ecs_task_cpu
   aws_ecs_task_memory = var.aws_ecs_task_memory
   aws_ecs_task_container_name = var.aws_ecs_task_container_name
