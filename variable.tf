@@ -49,7 +49,7 @@ variable "tags" {
 
 variable "aws_ecr_repo_name" {
     description = "ECR repository name"
-    default = "kasi_hcl-repo"
+    default = "uc8-bucket-ecr"
 }
 
 variable "image_tag_mutability" {
@@ -64,12 +64,12 @@ variable "scan_on_push" {
 
 variable "aws_ecs_cluster_name" {
     description = "ECS cluster name"
-    default = "kasi_hcl-cluster"
+    default = "uc8-ecs-cluster"
 }
 
 variable "aws_ecs_task_family" {
     description = "ECS task family"
-    default = "kasi_hcl-task"
+    default = "uc8-ecs-task"
   
 }
 
@@ -86,7 +86,7 @@ variable "aws_ecs_task_memory" {
 
 variable "aws_ecs_task_container_name" {
     description = "ECS task container name"
-    default = "kasi_hcl-container"
+    default = "uc8-ecs-container"
   
 }
 
@@ -104,7 +104,7 @@ variable "aws_ecs_task_container_port" {
 
 variable "aws_ecs_service_name" {
     description = "ECS service name"
-    default = "kasi_hcl-service"
+    default = "uc8-ecs-container-service"
   
 }
 
@@ -140,12 +140,12 @@ variable "aws_ecs_service_security_groups" {
 
 variable "aws_ecs_service_cluster" {
     description = "ECS service cluster"
-    default = "kasi_hcl-cluster"
+    default = "uc8-ecs-taask"
   
 }
 
 variable "aws_ecs_service_task_definition" {
     description = "ECS service task definition"
-    default = "kasi_hcl-task"
+    default = "uc8-ecs-task"
   
 }
