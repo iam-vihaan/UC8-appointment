@@ -1,21 +1,4 @@
-variable "aws_region" {
-  type        = string
-  description = "The AWS region to deploy resources in"
-}
-
-variable "aws_security_group_name" {
-    description = "Public_SG"
-    type        = string
-    default = "kasi_hcl_sg"
   
-}
-
-variable "aws_vpc_name" {
-    description = "VPC name"
-    type        = string
-    default = "kasi_hcl_vpc"
-}   
-
 variable "aws_vpc_cidr" {
     description = "CIDR block for the VPC"
     type        = string
@@ -71,19 +54,6 @@ variable "scan_on_push" {
     description = "Scan on push"
     type = bool
     default = true
-}
-
-variable "aws_ecs_cluster_name" {
-    description = "ECS cluster name"
-    type = string
-    default = "kasi_hcl-cluster"
-}
-
-variable "aws_ecs_task_family" {
-    description = "ECS task family"
-    type = string
-    default = "kasi_hcl-task"
-  
 }
 
 variable "aws_ecs_task_cpu" {
