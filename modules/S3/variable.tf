@@ -1,6 +1,6 @@
 variable "aws_s3_bucket_name" {
     description = "S3 bucket name"
-    default = "uc8-bucket-ecs"
+    default = "hcl-bucket"
 }
 
 variable "object_lock_enabled" {
@@ -11,7 +11,7 @@ variable "object_lock_enabled" {
 variable "tags" {
     description = "Tags for the S3 bucket"
     default = {
-        Name        = "uc8-bucket"
+        Name        = "hcl-bucket"
         Environment = "dev"
     }
 }
