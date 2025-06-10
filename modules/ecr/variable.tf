@@ -1,6 +1,6 @@
 variable "aws_ecr_repo_name" {
     description = "ECR repository name"
-    default = "kasi_hcl-repo"
+    default = "uc8-bucket-ecr"
 }
 
 variable "image_tag_mutability" {
