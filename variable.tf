@@ -11,7 +11,7 @@ variable "aws_security_group_name" {
 
 variable "aws_vpc_name" {
     description = "VPC name"
-    default = "kasi_hcl_vpc"
+    default = "uc8-ecs-vpc"
 }   
 
 variable "aws_vpc_cidr" {
