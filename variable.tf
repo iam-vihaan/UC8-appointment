@@ -3,15 +3,25 @@ variable "aws_region" {
     default = "us-east-1"
 }
 
+variable "access_key" {
+    description = "AWS access key"
+    default = null
+  
+}
+
+variable "secret_key" {
+    description = "AWS secret key"
+    default = null
+}
 variable "aws_security_group_name" {
     description = "Public_SG"
-    default = "uc8-sg"
+    default = "kasi_hcl_sg"
   
 }
 
 variable "aws_vpc_name" {
     description = "VPC name"
-    default = "uc8-ecs-vpc"
+    default = "kasi_hcl_vpc"
 }   
 
 variable "aws_vpc_cidr" {
@@ -31,7 +41,7 @@ variable "aws_private_subnet_cidr" {
 
 variable "aws_s3_bucket_name" {
     description = "S3 bucket name"
-    default = "uc8-bucket-ecs"
+    default = "kasi-hcl-bucket"
 }
 
 variable "object_lock_enabled" {
@@ -42,14 +52,14 @@ variable "object_lock_enabled" {
 variable "tags" {
     description = "Tags for the S3 bucket"
     default = {
-        Name        = "uc8-bucket-ecs"
+        Name        = "kasi_hcl-bucket"
         Environment = "dev"
     }
 }
 
 variable "aws_ecr_repo_name" {
     description = "ECR repository name"
-    default = "uc8-bucket-ecr"
+    default = "kasi_hcl-repo"
 }
 
 variable "image_tag_mutability" {
@@ -64,12 +74,12 @@ variable "scan_on_push" {
 
 variable "aws_ecs_cluster_name" {
     description = "ECS cluster name"
-    default = "uc8-ecs-cluster"
+    default = "kasi_hcl-cluster"
 }
 
 variable "aws_ecs_task_family" {
     description = "ECS task family"
-    default = "uc8-ecs-task"
+    default = "kasi_hcl-task"
   
 }
 
@@ -86,7 +96,7 @@ variable "aws_ecs_task_memory" {
 
 variable "aws_ecs_task_container_name" {
     description = "ECS task container name"
-    default = "uc8-ecs-container"
+    default = "kasi_hcl-container"
   
 }
 
@@ -104,7 +114,7 @@ variable "aws_ecs_task_container_port" {
 
 variable "aws_ecs_service_name" {
     description = "ECS service name"
-    default = "uc8-ecs-container-service"
+    default = "kasi_hcl-service"
   
 }
 
@@ -140,12 +150,12 @@ variable "aws_ecs_service_security_groups" {
 
 variable "aws_ecs_service_cluster" {
     description = "ECS service cluster"
-    default = "uc8-ecs-taask"
+    default = "kasi_hcl-cluster"
   
 }
 
 variable "aws_ecs_service_task_definition" {
     description = "ECS service task definition"
-    default = "uc8-ecs-task"
+    default = "kasi_hcl-task"
   
 }
