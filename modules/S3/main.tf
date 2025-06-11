@@ -1,5 +1,13 @@
-resource "aws_s3_bucket" "kasi-hcl-bucket-uc80923" {
-  bucket = var.aws_s3_bucket_name
-  object_lock_enabled = var.object_lock_enabled
-  tags = var.tags
+resource "random_id" "bucket_suffix" {
+  byte_length = 4
 }
+
+resource "aws_s3_bucket" "kasi-hcl-bucket" {
+  bucket = "kasi-hcl-bucket-${random_id.bucket_suffix.hex}"
+
+  tags = {
+    Name        = "kasi-hcl-bucket"
+    Environment = "Dev"
+  }
+}
+
