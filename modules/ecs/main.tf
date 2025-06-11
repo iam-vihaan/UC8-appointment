@@ -32,9 +32,10 @@ resource "aws_ecs_service" "hcl_task_service" {
   desired_count   = 1
   launch_type     = "FARGATE"
 
-  network_configuration {
-    subnets          = ["subnet-011119bc240f9c421"]
-    security_groups  = ["sg-0c557c03acd5d4bfd"]
-    assign_public_ip = true
-  }
+network_configuration {
+  subnets          = [aws_subnet.hcl_public_subnet.id]
+  security_groups  = [aws_security_group.Public_SG.id]
+  assign_public_ip = true
+ }
+
 }
