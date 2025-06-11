@@ -33,8 +33,8 @@ resource "aws_ecs_service" "hcl_task_service" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets          = ["subnet-011119bc240f9c421"]
-    security_groups  = ["sg-0c557c03acd5d4bfd"]
+    subnets          = module.vpc.private_subnets
+    security_groups  = ["module.network.Public_SG", "module.network.Private_SG"]
     assign_public_ip = true
   }
 }
